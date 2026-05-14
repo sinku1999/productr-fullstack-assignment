@@ -1,0 +1,1 @@
+export const login=(req,res)=>{if(!req.body.identifier)return res.status(400).json({success:false,message:"Email or phone number required"});res.json({success:true,message:"OTP sent",otp:"123456"})};export const verifyOtp=(req,res)=>{if(req.body.otp!=="123456")return res.status(400).json({success:false,message:"Invalid OTP"});res.json({success:true,token:"demo-token"})};

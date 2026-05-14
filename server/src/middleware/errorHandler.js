@@ -1,0 +1,1 @@
+export default function errorHandler(err,req,res,next){if(err.name==="ValidationError"){const message=Object.values(err.errors).map(e=>e.message).join(", ");return res.status(400).json({success:false,message})}res.status(res.statusCode===200?500:res.statusCode).json({success:false,message:err.message||"Server Error"})}
